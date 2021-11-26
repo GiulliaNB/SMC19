@@ -1,0 +1,276 @@
+    <!DOCTYPE html>
+    <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+    <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+    <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <html lang="en">
+    <!--<![endif]-->
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="pagecode.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#Cadastrar").click(function(){
+            submitForm();
+    });
+        $("#Baixar").click(function(){
+            baixarCSV();
+    
+    });    
+            });
+    </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <![endif]-->
+        <title>AWESOME SISTEMA DE MONITORAMENTO WOW </title>
+        <!--REQUIRED STYLE SHEETS-->
+        <!-- BOOTSTRAP CORE STYLE CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <!-- FONTAWESOME STYLE CSS -->
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+        <!--ANIMATED FONTAWESOME STYLE CSS -->
+        <link href="assets/css/font-awesome-animation.css" rel="stylesheet" />
+        <!-- VEGAS STYLE CSS -->
+        <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
+        <!-- SIDE MENU STYLE CSS -->
+        <link href="assets/css/component.css" rel="stylesheet" />
+        <!-- CUSTOM STYLE CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" />
+        <!-- GOOGLE FONT -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="cbp-spmenu-push">
+
+        <!-- MAIN HEADING-->
+        <div class="for-full-back color-bg-one" id="main-sec">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h1 class="pad-adjust"><i class="fa fa-plus faa-pulse animated"></i>Sistema de monitoramento Covid-19</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END MAIN HEADING-->
+        <!--LEFT SLIDE MENU-->
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <h3>SM COVID</h3>
+            <a href="#main-sec"><i class="fa fa-home fa-3x"></i>PAGINA PRINCIPAL</a>
+            <a href="#contact-sec"><i class="fa fa-globe fa-3x"></i>FORMULÁRIO</a>
+            <a href="#about-sec"><i class="fa fa-microphone fa-3x"></i>DEVS</a>
+        </nav>
+
+        <div class="row" id="icon-left">
+            <div class="col-md-12">
+                <i id="showLeftPush" class="fa fa-cut fa-4x faa-horizontal animated "></i>
+            </div>
+        </div>
+        <!--END LEFT SLIDE MENU-->
+
+        <!--RIGHT SLIDE MENU-->
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+            <h3>Contato</h3>
+            <a href="#">Telefone</a>
+            <a href="#">#########</a>
+            <a href="#">Endereço</a>
+            <a href="#">Rua karls, Avenida Varls</a>
+        </nav>
+
+        <div class="row" id="icon-right">
+            <div class="col-md-12">
+                <i id="showRightPush" class="fa fa-paperclip fa-4x "></i>
+            </div>
+        </div>
+        <!--END RIGHT SLIDE MENU-->
+
+        <!--HOME SECTION-->
+        <div class="container" id="home">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <span class="head-main">Bem vindo!</span>
+                    <h2 class="head-sub-main">Nesse sistema você poderá:</h2>
+                    <h3 class="head-last">Cadastradar pessoas que apresentam sintomas de COVID-19 para controle</h3>
+                    <a href="#about-sec" class="btn btn-primary btn-lg">Conheça o grupo dev</a>
+                </div>
+            </div>
+        </div>
+        <!--END HOME SECTION-->
+
+        <!--FORMULÁRIO SECTION-->
+        <section class="for-full-back color-bg-one" id="contact-sec">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h1><i class="fa fa-globe faa-pulse animated  "></i>Formulário</h1>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-8 col-md-offset-2 ">
+                            <h4>
+                                <strong>Logo abaixo pode ser realizado o cadastro no sistema de monitoramento
+                                </strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="for-full-back color-white " id="contact-inner">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-7">
+                        <form id="formulario">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" id="nome" name="nome" class="form-control" required="required" placeholder="Nome Completo">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-sm-7">
+                                    <div class="form-group">
+                                        <input type="text" id="numero" name="numero" class="form-control" required="required" placeholder="Numero de identificação">
+                                    </div>
+                                </div>
+                                     <div class="col-md-8 col-sm-8">
+                                    <label for="func">Selecione:</label>
+                            <select name="funcao" id="func">
+                                    <optgroup label="Tipo de acesso">
+                                    <option value="Aluno">Aluno</option>
+                                    <option value="Funcionario">Funcionário</option>
+                                    </optgroup>
+    </select>
+                                    </div>
+                                    <div class="col-md-9 col-sm-9">
+                                    <label for="Setor">Setores:</label>
+    <select name="Setores" id="Setor">
+    <optgroup label="Area de atuação">
+    <option value="n\a">----</option>
+    <option value="Aluno">Professor</option>
+    <option value="Administração">Administração</option>
+    <option value="Gestão">Gestão</option>
+    <option value="Recursos Humanos">Recursos Humanos</option>
+    <option value="Tecnologia da informação">Tecnologia da informação</option>
+    </optgroup>
+    </select>
+                                    </div>
+                                <div class="col-md-10 col-sm-10">
+                                <label for="start">Data de nascimento:</label>
+
+<input type="date" name="start" id="start"
+       value="yyyy-MM-dd"
+       min="1900-01-01" max="2021-12-31">
+
+                                </div>
+                                <div class="col-md-11 col-sm-11">
+                                <select name="estado" id="estado">
+                                    <option value="">Selecione um estado</option>
+                                    </select>
+                                    <select name="cidade" id="cidade" disabled>
+                                        <option value="">Por favor, selecione um estado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                                <div class="col-md-13 col-sm-13">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-default" id="Cadastrar">Cadastrar</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-default" id="Baixar">Baixar CSV</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--ABOUT SECTION-->
+         <section class="for-full-back color-white" id="about-team">
+            <div class="container">
+                <div class="row text-center g-pad-bottom">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h3>OUR TEAM PROFILE</h3>
+                    </div>
+
+                </div>
+                 <section class="for-full-back color-bg-one" id="about-sec">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <h1><i class="fa fa-microphone faa-pulse animated  "></i>About</h1>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-8 col-md-offset-2 ">
+                            <h4>
+                                <strong>Abaixo você pode ver as pessoas que estão envolvidas no projeto
+                                </strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <div class="row text-center g-pad-bottom">
+                    <div class="col-md-12 ">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="team-member">
+                                <img src="assets/img/team/1.jfif" alt="">
+                                <h3><strong>Giullia Nannini B. </strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="team-member">
+                                <img src="assets/img/team/2.png" alt="">
+                                <h3><strong>Australian Valf </strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="team-member">
+                                <img src="assets/img/team/3.png" alt="">
+                                <h3><strong>Pessoa 3 </strong></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="team-member">
+                                <img src="assets/img/team/4.png" alt="">
+                                <h3><strong>Pessoa 4 </strong></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END ABOUT SECTION-->
+
+        <!--FOOTER SECTION -->
+        <div class="for-full-back color-bg-one" id="footer">
+
+        </div>
+        <!-- END FOOTER SECTION -->
+
+        <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+        <!-- CORE JQUERY  -->
+        <script src="assets/plugins/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP CORE SCRIPT   -->
+        <script src="assets/plugins/bootstrap.js"></script>
+        <!-- SIDE MENU SCRIPTS -->
+        <script src="assets/js/modernizr.custom.js"></script>
+        <script src="assets/js/classie.js"></script>
+        <!-- VEGAS SLIDESHOW SCRIPTS -->
+        <script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="assets/js/custom.js"></script>
+
+    </body>
+    </html>
