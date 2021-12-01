@@ -76,7 +76,7 @@ $("#Baixar").click(function(){
 }
 
 function baixarCSV() {
-	$.get( 'http://localhost:8081/users', function( result ) {
+	$.get( 'http://Localhost:80/users', function( result ) {
 let data = prepareCSV(JSON.parse(result))
 var csvContent = "data:text/csv;charset=utf-8,";
 data.forEach(rowArray => { 
@@ -108,7 +108,23 @@ function prepareCSV(array) {
 return contentArray;
 }
 
+function calculaSintomas(){
+    var sintomas = []
+    if($("#febre").val()) {
+    sintomas.push("febre");
+    }
+    if($("#tosse").val()) {
+    sintomas.push("tosse");
+    }
+    if($("#cansaço").val()) {
+    sintomas.push("cansaço");
+    }
+    if($("#perda").val()) {
+    sintomas.push("perda");
+    }
 
+return sintomas
+}
 
 function submitForm() {
     var novoCadastro = {setor: $("#Setor").val(),
@@ -117,16 +133,17 @@ function submitForm() {
                         numero:$("#numero").val(),
                         func:  $("#func").val(),
                         estado:$("#estado").val(),
-                        cidade:$("#cidade").val()
+                        cidade:$("#cidade").val(),
+                        sintomas:calculaSintomas(),
+                        outros:$("#outros").val(),
 }
-$.post( 'http://localhost:8081/',novoCadastro).done(function(response){  
+$.post( 'http://Localhost:80/',novoCadastro).done(function(response){
 	if(response.status == 400){
 		alert ("Já existe um usuário com esse número!")
 	} else { 
 		alert ("Criado com sucesso!")
 	}
 }).error(
-	alert ("Já existe um usuário com esse número!")
 )
 }
 enableButtons();
