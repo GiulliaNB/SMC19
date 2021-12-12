@@ -67,7 +67,7 @@ app.on('SIGINT', function () {
 //   usuariosCadastrados = JSON.parse(users)
 //   console.log(listaDeCadastro)
 //   console.log(usuariosCadastrados)
-})
+//})
 var server = app.listen(process.env.PORT, function () {
  var host = server.address().address
   var port = server.address().port
