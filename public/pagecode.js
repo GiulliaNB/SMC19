@@ -261,7 +261,7 @@ function submitLog() {
 	var novoLog = {
 		nome: validUser.nome,
 		username: validUser.username,
-		data: $('#dataInicioSintomas').val(),
+		data: $("#dataInicioSintomas").val(),
 		sintomas: calculaSintomas(),
 		outros: $("#outros").val()
 	}
