@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+ <!DOCTYPE html>
     <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
     <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
     <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -7,11 +7,11 @@
     <!--<![endif]-->
 
     <head>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="pagecode.js"></script>
         <script>
             $(document).ready(function () {
-
                 verificarLogin();
                 $("#Cadastrar").click(function () {
                     submitForm();
@@ -93,9 +93,8 @@
         <!--LEFT SLIDE MENU-->
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
             <h3>SM COVID</h3>
-            <a href="#main-sec"><i class="fa fa-home fa-3x"></i>PAGINA PRINCIPAL</a>
-            <a href="#contact-sec"><i class="fa fa-globe fa-3x"></i>FORMULÁRIO</a>
-            <a href="#about-sec"><i class="fa fa-microphone fa-3x"></i>DEVS</a>
+            <a href="index.html"><i class="fa fa-home fa-3x"></i>PAGINA PRINCIPAL</a>
+            <a href="index.html"><i class="fa fa-microphone fa-3x"></i>DEVS</a>
         </nav>
 
         <div class="row" id="icon-left">
@@ -121,68 +120,7 @@
         </div>
         <!--END RIGHT SLIDE MENU-->
 
-        <!--HOME SECTION-->
-        <div class="container" id="home">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <span class="head-main">Bem vindo!</span>
-                    <h2 class="head-sub-main">Nesse sistema você poderá:</h2>
-                    <h3 class="head-last">Cadastradar pessoas que apresentam sintomas de COVID-19 para controle</h3>
-                    <a href="#about-sec" class="btn btn-primary btn-lg">Conheça o grupo dev</a>
-                </div>
-            </div>
-        </div>
-        <!--END HOME SECTION-->
-        <!--END HOME SECTION-->
-
         <!--FORMULÁRIO SECTION-->
-        <section class="for-full-back color-bg-one" id="contact-sec">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-8 col-md-offset-2 ">
-                        <h1><i class="fa fa-globe faa-pulse animated  "></i>Controle SMC19</h1>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-md-8 col-md-offset-2 ">
-                            <h4>
-                                <strong>Logue abaixo para entrar no sistema
-                                </strong>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="for-full-back color-white " id="formLogin">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <form id="formulario">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" id="login" name="login" class="form-control" required
-                                            placeholder="Login">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 col-sm-7">
-                                    <div class="form-group">
-                                        <input type="password" id="senha" name="senha" class="form-control" required
-                                            placeholder="senha">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="col-md-15 col-sm-15">
-                            <div class="form-group">
-                                <input disabled type="submit" class="btn btn-default" value="sign in" id="signIn">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="for-full-back color-white " id="contact-inner">
             <div class="container">
                 <div class="row">
@@ -190,14 +128,67 @@
                         <button type="button" class="btn btn-default" id="logOut">Log out</button>
                     </div>
                     <div class="col-md-7">
+                        <form id="formulario">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" id="nome" name="nome" class="form-control"
+                                            required="required" placeholder="Nome Completo">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-sm-7">
+                                    <div class="form-group">
+                                        <input type="text" id="numero" name="numero" class="form-control"
+                                            required="required" placeholder="Numero de identificação">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-8">
+                                    <label for="func">Selecione:</label>
+                                    <select name="funcao" id="func">
+                                        <optgroup label="Tipo de acesso">
+                                            <option value="Aluno">Aluno</option>
+                                            <option value="Funcionario">Funcionário</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-md-9 col-sm-9">
+                                    <label for="Setor">Setores:</label>
+                                    <select name="Setores" id="Setor">
+                                        <optgroup label="Area de atuação">
+                                            <option value="n\a">----</option>
+                                            <option value="Professor">Professor</option>
+                                            <option value="Administração">Administração</option>
+                                            <option value="Gestão">Gestão</option>
+                                            <option value="Recursos Humanos">Recursos Humanos</option>
+                                            <option value="Tecnologia da informação">Tecnologia da informação</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-md-10 col-sm-10">
+                                    <label for="start">Data de nascimento:</label>
+
+                                    <input type="date" name="start" id="start" value="yyyy-MM-dd" min="1900-01-01"
+                                        max="2021-12-31">
+
+                                </div>
+                                <div class="col-md-11 col-sm-11">
+                                    <select name="estado" id="estado">
+                                        <option value="">Selecione um estado</option>
+                                    </select>
+                                    <select name="cidade" id="cidade" disabled>
+                                        <option value="">Por favor, selecione um estado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
                         <div class="row">
-                            <div class="col-md-15 col-sm-15">
+                            <div class="col-md-15 col-sm-16">
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-default" id="Cadastro_Pessoa" style="display:none"><a href="Cadastro_Pessoa.html">Cadastro de funcionários e alunos</a></button>
-                                    <button type="button" class="btn btn-default" id="Cadastro_Sintomas"><a href="Cadastro_sintomas.html">Cadastro de sintomas</a></button>
+                                    <input disabled type="button" class="btn btn-default" value="Cadastrar"
+                                        id="Cadastrar">
                                 </div>
                                 <div class="form-group">
-                                <button type="button" class="btn btn-default" id="logs"><a href="logs.html">Acesso ao registros</a></button>
+                                    <button type="button" class="btn btn-default" id="Baixar">Baixar CSV</button>
                                 </div>
                             </div>
                         </div>
