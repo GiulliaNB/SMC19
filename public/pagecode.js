@@ -24,7 +24,7 @@ function realizarLogin() {
 		username: $("#login").val(),
 		password: $("#senha").val()
 	}
-	$.post('http://Localhost:80/login', usuario).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
 		if (response.status == 400) {
 			alert("Esse usuário não existe com essa senha!")
 		} else {
@@ -71,7 +71,7 @@ function confirmStatus() {
 		sintomas: "",
 		outros: $("#outros").val()
 	}
-	$.post('http://Localhost:80/logs', novoLog).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
 		if (response.status == 400) {
 			alert("Erro")
 		} else {
@@ -141,7 +141,7 @@ function montaPais() {
 
 
 function baixarCSV() {
-	$.get('http://Localhost:80/users', function (result) {
+	$.get('https://sdmdc19.herokuapp.com/users', function (result) {
 		let data = prepareCSV(JSON.parse(result))
 		var csvContent = "data:text/csv;charset=utf-8,";
 		data.forEach(rowArray => {
@@ -159,7 +159,7 @@ function baixarCSV() {
 
 
 function getPacientes() { 
-	$.get('http://Localhost:80/logs', function (result) {
+	$.get('https://sdmdc19.herokuapp.com/logs', function (result) {
 	var data = JSON.parse(result)
 	
 	let tableContent = "<tr><th>Nome</th><th>Número de Cadastro</th><th>Data</th><th>Sintomas</th><th>Outros Sintomas</th></tr>"
@@ -247,7 +247,7 @@ function submitForm() {
 		cidade: $("#cidade").val(),
 		password: $("#numero").val()
 	}
-	$.post('http://Localhost:80/', novoCadastro).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/', novoCadastro).done(function (response) {
 		if (response.status == 400) {
 			alert("Já existe um usuário com esse número!")
 		} else {
@@ -264,7 +264,7 @@ function submitLog() {
 		sintomas: calculaSintomas(),
 		outros: $("#outros").val()
 	}
-	$.post('http://Localhost:80/logs', novoLog).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
 		if (response.status == 400) {
 			alert("Erro")
 		} else {
