@@ -58,23 +58,23 @@ app.on('SIGINT', function () {
    console.log("salvo!");
 });
 
-var server = app.listen(80, function () {
-   var host = server.address().address
-   var port = server.address().port
-   var cadastros = fs.readFileSync('database.json')
-   var users = fs.readFileSync('users.json')
-   listaDeCadastro = JSON.parse(cadastros)
-   usuariosCadastrados = JSON.parse(users)
-   console.log(listaDeCadastro)
-   console.log(usuariosCadastrados)
-})
-//var server = app.listen(process.env.PORT, function () {
+//var server = app.listen(80, function () {
 //   var host = server.address().address
-//  var port = server.address().port
-// var cadastros = fs.readFileSync('database.json')
-// var users = fs.readFileSync('users.json')
-// listaDeCadastro = JSON.parse(cadastros)
-// var usuariosCadastrados = JSON.parse(users)
-// console.log(listaDeCadastro)
-// console.log(usuariosCadastrados)
-//})
+//   var port = server.address().port
+//   var cadastros = fs.readFileSync('database.json')
+//   var users = fs.readFileSync('users.json')
+//   listaDeCadastro = JSON.parse(cadastros)
+//   usuariosCadastrados = JSON.parse(users)
+//   console.log(listaDeCadastro)
+//   console.log(usuariosCadastrados)
+})
+var server = app.listen(process.env.PORT, function () {
+ var host = server.address().address
+  var port = server.address().port
+ var cadastros = fs.readFileSync('database.json')
+ var users = fs.readFileSync('users.json')
+ listaDeCadastro = JSON.parse(cadastros)
+ var usuariosCadastrados = JSON.parse(users)
+ console.log(listaDeCadastro)
+ console.log(usuariosCadastrados)
+})
