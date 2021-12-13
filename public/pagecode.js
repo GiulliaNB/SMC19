@@ -278,11 +278,7 @@ function submitLog() {
     }).error()
 }
 }							       							       
-							     
-
-
-
-
+}
 function carregaForm() {
 	localStorage.setItem("login", $("#login").val())
 	if (localStorage.getItem("login") != null || localStorage.getItem("login") != undefined) {
