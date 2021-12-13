@@ -259,21 +259,23 @@ function submitForm() {
 	}).error()
 }
 function submitLog() {
-	let validUser = JSON.parse(localStorage.getItem('login'));
-	var novoLog = {
-		nome: validUser.nome,
-		username: validUser.username,
-		data: $('#dataInicioSintomas').val(),
-		sintomas: calculaSintomas(),
-		outros: $("#outros").val()
-	}
-	$.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
-		if (response.status == 400) {
-			alert("Erro")
-		} else {
-			alert("Sugerimos que busque orientações através de um canal oficial do serviço de saúde (TeleSUS - https://aps.saude.gov.br/ape/corona/telesus)")
-		}
-	}).error()
+    let validUser = JSON.parse(localStorage.getItem('login'));
+    var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+"/"+today.getFullYear()
+    var novoLog = {
+        nome: validUser.nome,
+        username: validUser.username,
+        data: date.toString(),
+        sintomas: calculaSintomas(),
+        outros: $("#outros").val()
+    }
+    $.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
+        if (response.status == 400) {
+            alert("Erro")
+        } else {
+            alert("Sugerimos que busque orientações através de um canal oficial do serviço de saúde (TeleSUS - https://aps.saude.gov.br/ape/corona/telesus)%22)
+        }
+    }).error()
 }
 
 
