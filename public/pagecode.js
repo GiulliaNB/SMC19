@@ -31,7 +31,7 @@ function realizarLogin() {
 			localStorage.setItem('login', response);
 			$("#contact-inner").show();
 			$("#formLogin").hide();
-			if(JSON.parse(response).username == "admin") { 
+			if(JSON.parse(response).username == 'admin') { 
 				$("#Cadastro_Pessoa").show();
 			} else {
 				$("#Cadastro_Pessoa").hide();
