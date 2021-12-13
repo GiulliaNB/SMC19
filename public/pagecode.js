@@ -1,4 +1,5 @@
 
+
 function montaCidade(estado, pais) {
 	$.ajax({
 		type: 'GET',
@@ -20,32 +21,30 @@ function montaCidade(estado, pais) {
 }
 
 function realizarLogin() {
-    var usuario = {
-        username: $("#login").val(),
-        password: $("#senha").val()
-    }
-    $.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
-        if (response.status == 400) {
-            alert("Esse usuário não existe com essa senha!")
-        } else {
-            localStorage.setItem('login', response);
-            $("#contact-inner").show();
-            $("#formLogin").hide();
-            let user = JSON.parse(response)
-            if(user != null && user != undefined && user.username == "admin") { 
-                $("#Cadastro_Pessoa").show();
-            } else {
-                $("#Cadastro_Pessoa").hide();
-            }
-        }
-    }).error()
+	var usuario = {
+		username: $("#login").val(),
+		password: $("#senha").val()
+	}
+	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
+		if (response.status == 400) {
+			alert("Esse usuário não existe com essa senha!")
+		} else {
+			localStorage.setItem('login', response);
+			$("#contact-inner").show();
+			$("#formLogin").hide();
+			if(JSON.parse(response).username == "admin") { 
+				$("#Cadastro_Pessoa").show();
+			} else {
+				$("#Cadastro_Pessoa").hide();
+			}
+		}
+	}).error()
 }
 
 function verificarLogin() {
 	let validUser = JSON.parse(localStorage.getItem('login'));
 	console.log(validUser)
-	if (validUser == null || validUser == undefined) {
-		localStorage.clear();
+	if (validUser == null) {
 		$("#contact-inner").hide();
 	} else {
 		$("#contact-inner").show();
@@ -270,15 +269,17 @@ function submitLog() {
         outros: $("#outros").val()
     }
     $.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
-        if (response.status == 400) {
-            alert("Erro")
-        } else {
-            alert("Sugerimos que busque orientações através de um canal oficial do serviço de saúde (TeleSUS - https://aps.saude.gov.br/ape/corona/telesus)%22)
-        }
-    }).error()
+		if (response.status == 400) {
+			alert("Erro")
+		} else {
+			alert("Sugerimos que busque orientações através de um canal oficial do serviço de saúde (TeleSUS - https://aps.saude.gov.br/ape/corona/telesus)%22)")}
+	}).error()
+
 }
-}							       							       
-}
+
+
+
+
 function carregaForm() {
 	localStorage.setItem("login", $("#login").val())
 	if (localStorage.getItem("login") != null || localStorage.getItem("login") != undefined) {
