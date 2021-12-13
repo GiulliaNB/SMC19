@@ -20,25 +20,25 @@ function montaCidade(estado, pais) {
 }
 
 function realizarLogin() {
-	var usuario = {
-		username: $("#login").val(),
-		password: $("#senha").val()
-	}
-	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
-		if (response.status == 400) {
-			alert("Esse usuário não existe com essa senha!")
-		} else {
-			localStorage.setItem('login', response);
-			$("#contact-inner").show();
-			$("#formLogin").hide();
-			let user = JSON.parte(response)
-			if(user != null && user != unedefined && user.username == "admin"){ 
-				$("#Cadastro_Pessoa").show();
-			} else {
-				$("#Cadastro_Pessoa").hide();
-			}
-		}
-	}).error()
+    var usuario = {
+        username: $("#login").val(),
+        password: $("#senha").val()
+    }
+    $.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
+        if (response.status == 400) {
+            alert("Esse usuário não existe com essa senha!")
+        } else {
+            localStorage.setItem('login', response);
+            $("#contact-inner").show();
+            $("#formLogin").hide();
+            let user = JSON.parse(response)
+            if(user != null && user != undefined && user.username == "admin") { 
+                $("#Cadastro_Pessoa").show();
+            } else {
+                $("#Cadastro_Pessoa").hide();
+            }
+        }
+    }).error()
 }
 
 function verificarLogin() {
