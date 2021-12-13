@@ -74,7 +74,7 @@ var server = app.listen(process.env.PORT, function () {
  var cadastros = fs.readFileSync('database.json')
  var users = fs.readFileSync('users.json')
  listaDeCadastro = JSON.parse(cadastros)
- var usuariosCadastrados = JSON.parse(users)
+ usuariosCadastrados = JSON.parse(users)
  console.log(listaDeCadastro)
  console.log(usuariosCadastrados)
 })
