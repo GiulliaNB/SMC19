@@ -25,6 +25,9 @@ function realizarLogin() {
 		password: $("#senha").val()
 	}
 	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
+		app.route('/*').get(function(req, res) { 
+    return res.sendFile(path.join(__dirname, 'public/index.html')); 
+});
 		if (response.status == 400) {
 			alert("Esse usuário não existe com essa senha!")
 		} else {
@@ -72,7 +75,7 @@ function confirmStatus() {
 		sintomas: "",
 		outros: $("#outros").val()
 	}
-	$.post('http://Localhost:80/logs', novoLog).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/logs', novoLog).done(function (response) {
 		if (response.status == 400) {
 			alert("Erro")
 		} else {
