@@ -24,7 +24,7 @@ function realizarLogin() {
 		username: $("#login").val(),
 		password: $("#senha").val()
 	}
-	$.post('https://sdmdc19.herokuapp.com/', usuario).done(function (response) {
+	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
 		if (response.status == 400) {
 			alert("Esse usuário não existe com essa senha!")
 		} else {
