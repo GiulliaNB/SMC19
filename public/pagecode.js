@@ -25,7 +25,7 @@ function realizarLogin() {
 		password: $("#senha").val()
 	}
 	$.post('https://sdmdc19.herokuapp.com/login', usuario).done(function (response) {
-		app.route('/*').get(function(req, res) { 
+		app.route('https://sdmdc19.herokuapp.com/login').get(function(req, res) { 
     return res.sendFile(path.join(__dirname, 'public/index.html')); 
 });
 		if (response.status == 400) {
