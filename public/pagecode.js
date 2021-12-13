@@ -43,7 +43,8 @@ function realizarLogin() {
 function verificarLogin() {
 	let validUser = JSON.parse(localStorage.getItem('login'));
 	console.log(validUser)
-	if (validUser == null) {
+	if (validUser == null || validUser == undefined) {
+		localStorage.clear();
 		$("#contact-inner").hide();
 	} else {
 		$("#contact-inner").show();
